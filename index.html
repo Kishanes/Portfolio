@@ -180,7 +180,7 @@
                             <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button-area">
-                            <button type="submit">Send message</button>
+                            <button type="button" onclick="sendEmail();">Send message</button>
                         </div>
                     </form>
                 </div>
@@ -215,8 +215,25 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
+    <script src= "https://smtpjs.com/v3/smtp.js"></script>
+  <script type="text/javascript">
+    function sendEmail() {
+      Email.send({
+        Host: "smtp.gmail.com",
+        Username: "kishanayyangar1509@gmail.com",
+        Password: "Kishanayyangar@@1509",
+        To: 'Kishanayyangar98@gmail.com',
+        From: "kishanayyangar1509@gmail.com",
+        Subject: "Sending Email using javascript",
+        Body: "Well that was easy!!",
+      })
+        .then(function (message) {
+          alert("mail sent successfully")
+        });
+    }
+  </script>
     <!-- scroll bar js  -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var preogressbar = document .getElementById("preogressbar")
         var percent = document .getElementById("percent")
        
@@ -226,7 +243,7 @@
             preogressbar.style.height = progress + "%";
             percent.innerHTML = "Page Scrolled " + Math.round(progress)+ "%"
         }
-    </script>
+    </script> -->
 <!-- pre loader js  -->
   <script>
       var loader = document .getElementById("preloader");
